@@ -1,0 +1,82 @@
+@mixin basicButton {
+  font-size: 1.5em;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+
+    &:hover {
+      background: white;
+    }
+
+    &:active {
+      color: rgba(219, 49, 49, 0.473);
+      background: #b99aa5;
+    }
+
+    &:focus{
+      box-shadow: 0 0 3px 1px black;
+    }
+}
+
+button {
+  @include basicButton;
+}
+
+
+.buttonContainer {
+  margin: 0 auto;
+}
+
+.info {
+  font-size: 1.5em;
+}
+
+.abort {
+  color: red;
+}
+
+.confirm {
+  color: green;
+}
+
+.warning {
+  max-width: 400px;
+  background: khaki;
+  padding: 1em;
+  margin: 1em;
+  border: 2px solid crimson;
+  font-family: sans-serif;
+  color: #b21449;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    text-align: center;
+    margin-bottom: 2em;
+    letter-spacing: 3px;
+  }
+
+  &__text {
+    margin-bottom: 2em;
+    font-size: 1.5em;
+    margin: 0 0 3em;
+  }
+
+  &__button {
+    @include basicButton;
+
+    &--confirm {
+      color:green;
+      margin-right: 1em;
+    }
+
+    &--abort {
+      color:red;
+    }
+  }
+
+}
+
+.closed {
+display: none;
+}
